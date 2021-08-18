@@ -10,11 +10,11 @@ import { getPosts } from './actions/posts.action';
 const App =()=>{
     const classes = useStyles();
     const dispatch = useDispatch();
-    const [currentID,setCurrentID] = useState(null);
+    const [currentId,setCurrentId] = useState(null);
 
     useEffect(()=>{
         dispatch(getPosts());
-    },[dispatch]);
+    },[currentId, dispatch]);
 
     return(
         <Container maxWidth='lg'>
@@ -24,12 +24,12 @@ const App =()=>{
             </AppBar>
             <Grow in>
                 <Container>
-                    <Grid container justifyContent='space-between' alignItems='stretch' spacing={3}>
+                    <Grid container className={classes.mainContainer} justifyContent='space-between' alignItems='stretch' spacing={3}>
                         <Grid item xs={12} sm={7}>
-                            <Posts setCurrentID={setCurrentID}/>
+                            <Posts setCurrentId={setCurrentId}/>
                         </Grid>
                         <Grid item xs={12} sm={4}>
-                            <PostForm currentID={currentID} setCurrentID={setCurrentID}/>
+                            <PostForm currentId={currentId} setCurrentId={setCurrentId}/>
                         </Grid>
                     </Grid>
                 </Container>
