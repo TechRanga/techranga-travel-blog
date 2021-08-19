@@ -14,5 +14,6 @@ mongoose.connect(process.env.DB_URL ,{useNewUrlParser:true,useUnifiedTopology: t
 then(()=>app.listen(process.env.PORT,()=>{console.log(`Server is running on ${process.env.PORT}`)})).
 catch((error)=>console.log(error.message))
 
-app.use('/',(req,res)=>res.send("Welcome to Tech Ranga's Travel Blog Application"));
+
 app.use('/posts',postRoutes);
+app.use('/',(req,res)=>res.send("Welcome to Tech Ranga's Travel Blog Application"));

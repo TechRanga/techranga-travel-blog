@@ -1,13 +1,14 @@
 import axios from 'axios';
 
-const URL = "http://localhost:5000/posts";
+//const URL = "https://techranga-travel-blog-be.herokuapp.com/posts";
+const URL_DEV = "http://localhost:5000/posts";
 
-export const fetchPosts=()=>axios.get(URL);
+export const fetchPosts=()=>axios.get(URL_DEV);
 
-export const createPost=(newPost)=>axios.post(URL,newPost);
+export const createPost=(newPost)=>axios.post(URL_DEV,newPost);
 
-export const updatePost=(id,postData)=>axios.patch(`${URL}/${id}`,postData);
+export const updatePost=(id,postData)=>axios.patch(`${URL_DEV}/${id}`,postData);
 
-export const deletePost=(id)=>axios.delete(`${URL}/${id}`);
+export const deletePost=(id)=>axios.delete(`${URL_DEV}/${id}`);
 
-export const likePost=(id)=>axios.patch(`${URL}/like/${id}`);
+export const likePost=(id)=>axios.patch(`${URL_DEV}/like/${id}`);
